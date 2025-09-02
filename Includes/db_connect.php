@@ -1,0 +1,15 @@
+<?php
+$host = 'localhost';
+$dbname = 'expense_tracker';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Remove or comment out the echo for production
+    // echo "Connection successful!";
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+?>
